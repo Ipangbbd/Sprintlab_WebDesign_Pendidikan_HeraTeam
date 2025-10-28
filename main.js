@@ -2,20 +2,9 @@ const logoBtn = document.getElementById('logoBtn');
 const sidebarNav = document.getElementById('sidebarNav');
 const closeSidebar = document.getElementById('closeSidebar');
 
-if (logoBtn && sidebarNav && closeSidebar) {
+if (logoBtn) {
 	logoBtn.addEventListener('click', function () {
-		sidebarNav.classList.add('active');
-	});
-	closeSidebar.addEventListener('click', function () {
-		sidebarNav.classList.remove('active');
-	});
-	// Optional: close sidebar when clicking outside
-	document.addEventListener('click', function (e) {
-		if (sidebarNav.classList.contains('active')) {
-			if (!sidebarNav.contains(e.target) && e.target !== logoBtn) {
-				sidebarNav.classList.remove('active');
-			}
-		}
+		window.location.href = '../../index.html';
 	});
 }
 

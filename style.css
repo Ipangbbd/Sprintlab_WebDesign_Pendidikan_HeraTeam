@@ -101,11 +101,12 @@ img {
     pointer-events: none;
     z-index: 9999;
     transform: translate(-50%, -50%);
-    transition: border-color var(--transition-fast),
-        background var(--transition-fast),
-        width var(--transition-fast),
-        height var(--transition-fast);
+    transition: border-color var(--transition-fast), background var(--transition-fast), width var(--transition-fast), height var(--transition-fast);
     mix-blend-mode: lighten;
+    -webkit-transition: border-color var(--transition-fast), ;
+    -moz-transition: border-color var(--transition-fast), ;
+    -ms-transition: border-color var(--transition-fast), ;
+    -o-transition: border-color var(--transition-fast), ;
 }
 
 #custom-cursor.cursor-hover {
@@ -783,7 +784,7 @@ nav {
     font-weight: 400;
     padding: 18px 30px;
     border-radius: var(--radius-xl);
-    cursor: pointer;
+    cursor: none;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -820,6 +821,159 @@ nav {
 .faq-item.active .faq-question i {
     transform: rotate(180deg);
 }
+
+#Contact {
+    background-color: var(--bg-dark);
+    padding: 100px 10%;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-light);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.section-title span {
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    margin-top: 10px;
+    color: var(--text-light);
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Left Side */
+.contact-info {
+    flex: 1;
+    min-width: 280px;
+}
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.contact-details div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    color: var(--text-muted);
+}
+
+.contact-details i {
+    color: var(--accent);
+    font-size: 1.1rem;
+}
+
+/* Social icons */
+.social-links {
+    display: flex;
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: var(--text-light);
+    font-size: 1.3rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent);
+    transform: scale(1.15);
+}
+
+/* Right Side Form */
+.contact-form {
+    flex: 1;
+    min-width: 320px;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-group {
+    width: 100%;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    color: var(--text-light);
+    font-size: 0.95rem;
+    padding: 15px 20px;
+    border-radius: 12px;
+    outline: none;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border: 1px solid var(--accent);
+    box-shadow: 0 0 8px rgba(0, 122, 255, 0.4);
+}
+
+.contact-form button {
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    padding: 14px 0;
+    border-radius: 12px;
+    cursor: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #1a88ff;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+}
+
 
 /* =============================================================================
    CTA SECTION
@@ -1401,7 +1555,7 @@ footer {
 
     button,
     a {
-        cursor: pointer;
+        cursor: none;
     }
 }
 

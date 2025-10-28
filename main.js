@@ -31,12 +31,12 @@ document.querySelectorAll(hoverSelectors).forEach(el => {
 const faqItems = document.querySelectorAll('.faq-item');
 
 faqItems.forEach(item => {
-  const question = item.querySelector('.faq-question');
-  question.addEventListener('click', () => {
-    item.classList.toggle('active');
-    faqItems.forEach(other => {
-      if (other !== item) other.classList.remove('active');
-    });
-  });
+	const question = item.querySelector('.faq-question');
+	question.addEventListener('click', () => {
+		item.classList.toggle('active');
+		faqItems.forEach(other => {
+			if (other !== item) other.classList.remove('active');
+		});
+	});
 });
 

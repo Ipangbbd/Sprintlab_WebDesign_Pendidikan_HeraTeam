@@ -1890,19 +1890,6 @@ footer {
 
 /* Extra Small Devices */
 @media (max-width: 360px) {
-    .sidebar-nav {
-        width: 90vw;
-        padding: 24px 16px;
-    }
-
-    .sidebar-title {
-        font-size: 1.3rem;
-    }
-
-    .sidebar-links a {
-        font-size: 1rem;
-    }
-
     .team-card {
         height: 380px;
     }
@@ -1992,35 +1979,5 @@ button:focus-visible {
 
     nav {
         border-width: 2px;
-    }
-}
-
-/* Print Styles */
-@media print {
-
-    #custom-cursor,
-    header,
-    .sidebar-nav,
-    .nav-actions,
-    .btn-learn,
-    .Learn-Btn,
-    .cta-button,
-    footer {
-        display: none;
-    }
-
-    body {
-        background: white;
-        color: black;
-    }
-
-    #Hero,
-    #About,
-    #Mission,
-    #Team,
-    #FAQ,
-    #CTA {
-        background: white;
-        color: black;
     }
 }

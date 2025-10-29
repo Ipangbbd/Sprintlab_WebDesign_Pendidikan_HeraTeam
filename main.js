@@ -8,6 +8,8 @@ const modalTitle = document.getElementById('modal-title');
 const modalList = document.getElementById('modal-list');
 const modalClose = document.querySelector('.modal-close');
 
+// Navigation button logic
+
 learnBtn = () => {
 	window.location.href = 'Assets/Pages/country_menu.html';
 }
@@ -54,6 +56,8 @@ document.querySelectorAll(hoverSelectors).forEach(el => {
 	});
 });
 
+// FAQ Accordion Logic
+
 const faqItems = document.querySelectorAll('.faq-item');
 
 faqItems.forEach(item => {
@@ -65,6 +69,8 @@ faqItems.forEach(item => {
 		});
 	});
 });
+
+// Country Modal Logic
 
 const countryData = {
 	Indonesia: {
@@ -143,6 +149,8 @@ countryPointers.forEach(pointer => {
 		}
 	});
 });
+
+// Modal close logic
 
 if (modalClose) {
 	modalClose.addEventListener('click', () => {

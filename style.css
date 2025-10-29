@@ -932,7 +932,9 @@ nav {
     * {
         max-width: 100%;
     }
-    section, div {
+
+    section,
+    div {
         overflow-x: hidden;
     }
 }

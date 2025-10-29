@@ -75,7 +75,7 @@ body::before {
     position: absolute;
     top: 0;
     left: 50%;
-    width: 700px;
+    width: min(700px, 100%);
     height: 100vh;
     pointer-events: none;
     z-index: 0;
@@ -928,6 +928,16 @@ nav {
     }
 }
 
+@media (max-width: 600px) {
+    * {
+        max-width: 100%;
+    }
+    section, div {
+        overflow-x: hidden;
+    }
+}
+
+
 /* =============================================================================
    COUNTRY MENU SECTION
    ============================================================================= */
@@ -942,7 +952,7 @@ nav {
 
 .country-card {
     border-radius: 18px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
     width: 180px;
     min-width: 150px;
     max-width: 220px;
@@ -962,7 +972,7 @@ nav {
     border-radius: 12px;
     margin-bottom: 16px;
     object-fit: cover;
-    box-shadow: 0 1px 8px rgba(7,136,217,0.08);
+    box-shadow: 0 1px 8px rgba(7, 136, 217, 0.08);
 }
 
 .country-card div {
@@ -974,15 +984,15 @@ nav {
 
 .country-card:hover {
     transform: translateY(-6px) scale(1.04);
-    box-shadow: 0 6px 24px rgba(7,136,217,0.12);
+    box-shadow: 0 6px 24px rgba(7, 136, 217, 0.12);
     border-color: var(--blue);
 }
 
 #CountryMenu {
     width: 100%;
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 200px 0 60px 0;
+    padding: 200px 0 2% 0;
     position: relative;
 }
 
@@ -1010,6 +1020,7 @@ nav {
     .country-menu-list {
         gap: 24px;
     }
+
     .country-card {
         width: 45vw;
         min-width: 120px;
@@ -1022,19 +1033,28 @@ nav {
     .country-menu-list {
         gap: 16px;
     }
+
     .country-card {
         width: 90vw;
         min-width: 100px;
         max-width: 98vw;
         padding: 18px 6px 14px 6px;
     }
+
     .country-card img {
         width: 48px;
         height: 48px;
         margin-bottom: 10px;
     }
+
     .country-card div {
         font-size: 1rem;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    #custom-cursor {
+        display: none;
     }
 }
 
@@ -1151,7 +1171,7 @@ nav {
     margin: 60px auto 0 auto;
     background: var(--bg-dark);
     border-radius: 24px;
-    box-shadow: 0 2px 24px rgba(0,0,0,0.10);
+    box-shadow: 0 2px 24px rgba(0, 0, 0, 0.10);
     overflow: hidden;
     border: 1px solid var(--border);
 }
@@ -1187,7 +1207,7 @@ nav {
     color: var(--white);
     margin-bottom: 0;
     letter-spacing: 0.04em;
-    text-shadow: 0 2px 8px rgba(7,136,217,0.08);
+    text-shadow: 0 2px 8px rgba(7, 136, 217, 0.08);
 }
 
 .video-player-wrapper {
@@ -1213,7 +1233,7 @@ nav {
     font-size: 1.08rem;
     line-height: 1.7;
     margin-top: 8px;
-    background: rgba(255,255,255,0.01);
+    background: rgba(255, 255, 255, 0.01);
     border-radius: 10px;
     padding: 18px 14px;
     border: 1px solid var(--border);
@@ -1224,12 +1244,15 @@ nav {
         max-width: 98vw;
         margin: 30px auto 0 auto;
     }
+
     .video-container {
         padding: 18px 8vw 18px 8vw;
     }
+
     .video-title {
         font-size: 1.3rem;
     }
+
     .video-banner {
         height: 120px;
     }
@@ -1239,16 +1262,20 @@ nav {
     .video-section {
         border-radius: 12px;
     }
+
     .video-container {
         padding: 12px 2vw 12px 2vw;
         gap: 16px;
     }
+
     .video-title {
         font-size: 1.05rem;
     }
+
     .video-banner {
         height: 70px;
     }
+
     .video-description {
         font-size: 0.98rem;
         padding: 10px 6px;
@@ -1269,7 +1296,7 @@ nav {
 .playlist-box {
     background: var(--bg-dark);
     border-radius: var(--radius-md);
-    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
     border: 1px solid var(--border);
     min-width: 220px;
     max-width: 300px;
@@ -1310,7 +1337,7 @@ nav {
 
 .playlist-back-btn:hover {
     color: var(--blue-light);
-    background: rgba(255,255,255,0.07);
+    background: rgba(255, 255, 255, 0.07);
 }
 
 .playlist-list {
@@ -1324,7 +1351,7 @@ nav {
 
 .playlist-list li a {
     display: block;
-    background: rgba(255,255,255,0.02);
+    background: rgba(255, 255, 255, 0.02);
     color: var(--white);
     padding: 10px 12px;
     border-radius: 8px;
@@ -1347,6 +1374,7 @@ nav {
         flex-direction: column;
         gap: 24px;
     }
+
     .playlist-box {
         max-width: 100vw;
         min-width: 0;

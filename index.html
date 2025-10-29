@@ -8,12 +8,33 @@
     <link rel="stylesheet" href="style.css">
 
     <!-- Font Awesome CDN for Social Media Icons -->
+    <!-- Add this to your <head> -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
 
 <body>
 
+    <!-- Custom Cursor Start -->
     <div id="custom-cursor"></div>
+    <!-- Custom Cursor End -->
+
+    <!-- Country Modal Start -->
+    <div id="country-modal" class="country-modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-image">
+                <img id="modal-img" src="" alt="Country History">
+            </div>
+            <div class="modal-materials">
+                <h3 id="modal-title"></h3>
+                <ul id="modal-list">
+                    <!-- Materials will be injected here -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Country Modal End -->
 
     <!-- Header Start -->
     <Header>
@@ -61,32 +82,79 @@
         <!-- Hero Section Start -->
         <Section id="Hero">
             <div class="Container">
-                <h1>Journey Through Time, Around the World</h1>
+                <h1>Learn Heritages And Era With <span class="hera-luxury">HERA</span></h1>
                 <p>
                     Explore global history through interactive experiences.<br>
                     Discover fascinating stories from every corner of the Earth,<br>
                     and become part of humanity's grand adventure.
                 </p>
-                <button class="btn-learn">Learn now</button>
+                <button class="btn-learn" onclick="learnBtn()">Learn now</button>
 
                 <div class="hero-globe">
                     <!-- Indonesia Pointer -->
                     <div class="globe-pointer indonesia-pointer" data-country="Indonesia">
-                        <div class="pointer-dot"></div>
+                        <svg width="57" height="65" viewBox="0 0 57 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M31.0576 56.6055C30.7349 56.9535 30.3474 57.2331 29.916 57.4258C29.4698 57.6251 28.9876 57.7285 28.5 57.7285C28.0124 57.7285 27.5302 57.6251 27.084 57.4258C26.6524 57.233 26.2643 56.9537 25.9414 56.6055L28.5 54.2344L31.0576 56.6055ZM28.5 0.0498047C40.5164 0.0498047 49.825 10.3905 49.8252 23.2695C49.8252 26.8943 48.4222 30.8189 46.6777 34.3916C44.8946 38.0463 42.5519 41.7278 40.2656 44.9766C37.6546 48.6729 34.8633 52.235 31.9033 55.6504L31.3125 56.3223L31.1523 56.502L31.1514 56.5029L31.125 56.5322L28.5342 54.1299L28.5 54.0986L28.4658 54.1299L25.874 56.5322L25.8486 56.5029L25.8477 56.502L25.6875 56.3223C22.9039 53.1557 20.2671 49.86 17.7852 46.4463L16.7314 44.9766C14.4522 41.7276 12.1055 38.0464 10.3223 34.3916C8.5778 30.8189 7.1748 26.8943 7.1748 23.2695C7.17503 10.3869 16.4836 0.0498047 28.5 0.0498047ZM28.5 14.3945C26.597 14.3945 24.7722 15.1608 23.4268 16.5244C22.0813 17.8883 21.3252 19.7385 21.3252 21.667C21.3253 23.5954 22.0813 25.4448 23.4268 26.8086C24.7723 28.1723 26.5969 28.9385 28.5 28.9385C30.4031 28.9385 32.2277 28.1723 33.5732 26.8086C34.9187 25.4448 35.6747 23.5954 35.6748 21.667C35.6748 19.7385 34.9187 17.8883 33.5732 16.5244C32.2278 15.1608 30.403 14.3945 28.5 14.3945Z"
+                                fill="url(#paint0_linear_97_23)" stroke="black" stroke-width="0.1" />
+                            <defs>
+                                <linearGradient id="paint0_linear_97_23" x1="29.3906" y1="64.0972" x2="29.3906"
+                                    y2="-17.1528" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0.423411" stop-color="white" />
+                                    <stop offset="0.431198" stop-color="#FF0000" />
+                                    <stop offset="1" stop-color="#FF0000" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+
+
+
                         <div class="pointer-pulse"></div>
                         <div class="pointer-tooltip">Explore Indonesian History</div>
                     </div>
 
                     <!-- Japan Pointer -->
                     <div class="globe-pointer japan-pointer" data-country="Japan">
-                        <div class="pointer-dot"></div>
+                        <svg width="57" height="65" viewBox="0 0 57 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M31.0576 56.6055C30.7349 56.9535 30.3474 57.2331 29.916 57.4258C29.4698 57.6251 28.9876 57.7285 28.5 57.7285C28.0124 57.7285 27.5302 57.6251 27.084 57.4258C26.6524 57.233 26.2643 56.9537 25.9414 56.6055L28.5 54.2344L31.0576 56.6055ZM28.5 0.0498047C40.5164 0.0498047 49.825 10.3905 49.8252 23.2695C49.8252 26.8943 48.4222 30.8189 46.6777 34.3916C44.8946 38.0463 42.5519 41.7278 40.2656 44.9766C37.6546 48.6729 34.8633 52.235 31.9033 55.6504L31.3125 56.3223L31.1523 56.502L31.1514 56.5029L31.125 56.5322L28.5342 54.1299L28.5 54.0986L28.4658 54.1299L25.874 56.5322L25.8486 56.5029L25.8477 56.502L25.6875 56.3223C22.5064 52.7035 19.517 48.9161 16.7314 44.9766C14.4522 41.7276 12.1055 38.0464 10.3223 34.3916C8.5778 30.8189 7.1748 26.8943 7.1748 23.2695C7.17503 10.3869 16.4836 0.0498047 28.5 0.0498047ZM28.5 14.3945C26.597 14.3945 24.7722 15.1608 23.4268 16.5244C22.0813 17.8883 21.3252 19.7385 21.3252 21.667C21.3253 23.5954 22.0813 25.4448 23.4268 26.8086C24.7723 28.1723 26.5969 28.9385 28.5 28.9385C30.4031 28.9385 32.2277 28.1723 33.5732 26.8086C34.9187 25.4448 35.6747 23.5954 35.6748 21.667C35.6748 19.7385 34.9187 17.8883 33.5732 16.5244C32.2278 15.1608 30.403 14.3945 28.5 14.3945Z"
+                                fill="url(#paint0_linear_97_12)" stroke="black" stroke-width="0.1" />
+                            <path
+                                d="M28.5 14.4941C32.4068 14.4941 35.5752 17.7052 35.5752 21.667C35.575 25.6285 32.4066 28.8389 28.5 28.8389C24.5934 28.8389 21.425 25.6285 21.4248 21.667C21.4248 17.7052 24.5932 14.4941 28.5 14.4941Z"
+                                fill="#FF0000" stroke="black" stroke-width="0.1" />
+                            <defs>
+                                <linearGradient id="paint0_linear_97_12" x1="69.4688" y1="23.4722" x2="-10.6875"
+                                    y2="23.4722" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0.430115" stop-color="white" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+
+
                         <div class="pointer-pulse"></div>
                         <div class="pointer-tooltip">Discover Japan's Legacy</div>
                     </div>
 
                     <!-- France Pointer -->
                     <div class="globe-pointer france-pointer" data-country="France">
-                        <div class="pointer-dot"></div>
+                        <svg width="57" height="65" viewBox="0 0 57 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M31.0576 56.6055C30.7349 56.9535 30.3474 57.2331 29.916 57.4258C29.4698 57.6251 28.9876 57.7285 28.5 57.7285C28.0124 57.7285 27.5302 57.6251 27.084 57.4258C26.6524 57.233 26.2643 56.9537 25.9414 56.6055L28.5 54.2344L31.0576 56.6055ZM28.5 0.0498047C40.5164 0.0498047 49.825 10.3905 49.8252 23.2695C49.8252 26.8943 48.4222 30.8189 46.6777 34.3916C44.8946 38.0463 42.5519 41.7278 40.2656 44.9766C37.6546 48.6729 34.8633 52.235 31.9033 55.6504L31.3125 56.3223L31.1523 56.502L31.1514 56.5029L31.125 56.5322L28.5342 54.1299L28.5 54.0986L28.4658 54.1299L25.874 56.5322L25.8486 56.5029L25.8477 56.502L25.6875 56.3223C22.5064 52.7035 19.517 48.9161 16.7314 44.9766C14.4522 41.7276 12.1055 38.0464 10.3223 34.3916C8.5778 30.8189 7.1748 26.8943 7.1748 23.2695C7.17503 10.3869 16.4836 0.0498047 28.5 0.0498047ZM28.5 14.3945C26.597 14.3945 24.7722 15.1608 23.4268 16.5244C22.0813 17.8883 21.3252 19.7385 21.3252 21.667C21.3253 23.5954 22.0813 25.4448 23.4268 26.8086C24.7723 28.1723 26.5969 28.9385 28.5 28.9385C30.4031 28.9385 32.2277 28.1723 33.5732 26.8086C34.9187 25.4448 35.6747 23.5954 35.6748 21.667C35.6748 19.7385 34.9187 17.8883 33.5732 16.5244C32.2278 15.1608 30.403 14.3945 28.5 14.3945Z"
+                                fill="url(#paint0_linear_97_2)" stroke="black" stroke-width="0.1" />
+                            <path
+                                d="M28.5 14.4941C32.4068 14.4941 35.5752 17.7052 35.5752 21.667C35.575 25.6285 32.4066 28.8389 28.5 28.8389C24.5934 28.8389 21.425 25.6285 21.4248 21.667C21.4248 17.7052 24.5932 14.4941 28.5 14.4941Z"
+                                stroke="black" stroke-width="0.1" />
+                            <defs>
+                                <linearGradient id="paint0_linear_97_2" x1="69.4688" y1="23.4722" x2="-10.6875"
+                                    y2="23.4722" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0.427169" stop-color="#FF0000" />
+                                    <stop offset="0.430115" stop-color="white" />
+                                    <stop offset="0.585869" stop-color="white" />
+                                    <stop offset="0.585969" stop-color="#0F0065" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+
                         <div class="pointer-pulse"></div>
                         <div class="pointer-tooltip">Journey Through French History</div>
                     </div>
@@ -117,7 +185,7 @@
                         human civilization, one story at a time.
                     </p>
 
-                    <button class="Learn-Btn">Learn now</button>
+                    <button class="Learn-Btn" onclick="learnBtn()">Learn now</button>
                 </div>
 
                 <div class="About-Image">
@@ -151,7 +219,7 @@
                         critical thinking, and global citizenship.
                     </p>
 
-                    <button class="Learn-Btn">Learn now</button>
+                    <button class="Learn-Btn" onclick="learnBtn()">Learn now</button>
                 </div>
 
                 <div class="Mission-Image">
@@ -172,7 +240,7 @@
             <div class="team-container">
                 <!-- Member 1 -->
                 <div class="team-card">
-                    <img src="Assets/Images/jo.jpg" alt="Muhamad Ragil Jausyaq Fauzi">
+                    <img src="Assets/Images/Person/jo.jpg" alt="Muhamad Ragil Jausyaq Fauzi">
                     <div class="overlay"></div>
                     <div class="member-info">
                         <h3>Muhamad Ragil Jausyaq Fauzi</h3>
@@ -187,7 +255,7 @@
 
                 <!-- Member 2 -->
                 <div class="team-card">
-                    <img src="Assets/Images/ali.jpg" alt="Muhammad Ali Irfansyah">
+                    <img src="Assets/Images/Person/ali.jpg" alt="Muhammad Ali Irfansyah">
                     <div class="overlay"></div>
                     <div class="member-info">
                         <h3>Muhammad Ali Irfansyah</h3>
@@ -202,7 +270,7 @@
 
                 <!-- Member 3 -->
                 <div class="team-card">
-                    <img src="Assets/Images/prima.jpg" alt="Prima Asadafa">
+                    <img src="Assets/Images/Person/prima.jpg" alt="Prima Asadafa">
                     <div class="overlay"></div>
                     <div class="member-info">
                         <h3>Prima Asadafa</h3>
@@ -323,7 +391,7 @@
                 <p>Start Your Free Trial</p>
 
                 <div class="cta-button-wrapper">
-                    <button class="cta-button">Learn now</button>
+                    <button class="cta-button" onclick="learnBtn()">Learn now</button>
                 </div>
             </div>
         </Section>

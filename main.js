@@ -46,10 +46,12 @@ document.addEventListener('mousemove', function (e) {
 });
 
 // Add hover effect for interactive elements
-const hoverSelectors = 'a, button, .btn-login, .btn-signin, .btn-learn, .Learn-Btn, .cta-button, .globe-pointer';
+const hoverSelectors = 'a, button, .btn-login, .btn-signin, .btn-learn, .Learn-Btn, .cta-button, .globe-pointer, .nav-links a';
 document.querySelectorAll(hoverSelectors).forEach(el => {
 	el.addEventListener('mouseenter', () => {
-		if (cursor) cursor.classList.add('cursor-hover');
+		if (cursor) {
+			cursor.classList.add('cursor-hover');
+		};
 	});
 	el.addEventListener('mouseleave', () => {
 		if (cursor) cursor.classList.remove('cursor-hover');

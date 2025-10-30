@@ -92,12 +92,14 @@ body::before {
 a {
     text-decoration: none;
     color: inherit;
+    cursor: none;
 }
 
 button {
     border: none;
     outline: none;
     font-family: inherit;
+    cursor: none;
 }
 
 img {
@@ -183,7 +185,16 @@ header {
     top: 10px;
     user-select: none;
     z-index: 2100;
+    cursor: none;
     transition: transform var(--transition-base);
+    -webkit-transition: transform var(--transition-base);
+    -moz-transition: transform var(--transition-base);
+    -ms-transition: transform var(--transition-base);
+    -o-transition: transform var(--transition-base);
+}
+
+.Corner-Logo svg {
+    cursor: none;
 }
 
 .Corner-Logo:hover {
@@ -221,6 +232,8 @@ nav {
     color: var(--light-gray);
     transition: color var(--transition-base);
     position: relative;
+    cursor: none;
+    /* cursor: pointer; */
 }
 
 .nav-links a::after {
@@ -232,10 +245,12 @@ nav {
     height: 2px;
     background: var(--blue);
     transition: width var(--transition-base);
+    /* cursor: pointer; */
 }
 
 .nav-links a:hover {
     color: var(--blue);
+    /* cursor: pointer; */
 }
 
 .nav-links a:hover::after {
@@ -468,7 +483,7 @@ nav {
 
 .About-Text h1 {
     font-size: clamp(1.5rem, 3vw, 2rem);
-    font-weight: 600;
+    font-weight: 300;
     line-height: 1.4;
     margin-bottom: 20px;
 }
@@ -518,7 +533,7 @@ nav {
     background-color: var(--bg-dark);
     color: var(--white);
     text-align: center;
-    padding: 120px 10% 100px;
+    padding: 200px 10% 100px;
     /* position: relative; */
     overflow: hidden;
 }
@@ -536,9 +551,9 @@ nav {
 
 .Mission-Text h1 {
     font-size: clamp(1.5rem, 4vw, 2.2rem);
-    font-weight: 600;
+    font-weight: 300;
     line-height: 1.4;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .Mission-Text p {
@@ -569,13 +584,13 @@ nav {
    ============================================================================= */
 #Team {
     background-color: var(--bg-dark);
-    padding: 100px 10%;
+    padding: 200px 10%;
     text-align: center;
 }
 
 .section-title {
     text-align: center;
-    padding-bottom: 60px;
+    /* padding-bottom: 60px; */
     max-width: 800px;
     margin: 0 auto;
 }
@@ -594,8 +609,8 @@ nav {
     color: var(--text-light);
     font-size: clamp(1.8rem, 4vw, 2.5rem);
     margin-top: 10px;
-    margin-bottom: 70px;
-    font-weight: 600;
+    /* margin-bottom: 70px; */
+    font-weight: 375;
     position: relative;
     display: inline-block;
     padding-bottom: 20px;
@@ -668,12 +683,12 @@ nav {
 
 .member-info h3 {
     font-size: 1.15rem;
-    font-weight: 600;
+    font-weight: 425;
     margin-bottom: 4px;
 }
 
 .member-info p {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     color: var(--text-muted);
     margin-bottom: 14px;
 }
@@ -700,7 +715,7 @@ nav {
    ============================================================================= */
 #FAQ {
     background-color: var(--bg-dark);
-    padding: 100px 10%;
+    padding: 200px 10%;
     color: var(--text-light);
 }
 
@@ -790,12 +805,12 @@ nav {
 
 .section-title span {
     color: var(--accent);
-    font-weight: 600;
+    font-weight: 400;
     letter-spacing: 2px;
 }
 
 .section-title h2 {
-    font-size: 2.5rem;
+    font-size: 2.1rem;
     margin-top: 10px;
     color: var(--text-light);
 }
@@ -818,7 +833,7 @@ nav {
 
 .contact-info h3 {
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 400;
     margin-bottom: 15px;
 }
 
@@ -1424,7 +1439,7 @@ nav {
 
 .CTA-Container h2 {
     font-size: clamp(1.8rem, 4vw, 2.5rem);
-    font-weight: 600;
+    font-weight: 475;
     margin-bottom: 0;
 }
 
